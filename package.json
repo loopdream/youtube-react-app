@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:*",
+    "dev": "npm run clean && npm-run-all --parallel dev:*",
     "dev:webpack": "webpack --config webpack/webpack.client.dev.js --watch",
     "dev:server": "nodemon src/index.js --exec \"node -r babel-register\"",
-    "build": "npm run clean && npm-run-all --parallel build:*",
+    "build": "npm-run-all --parallel build:*",
     "build:client": "cross-env NODE_ENV=production webpack --config webpack/webpack.client.prod.js --progress",
     "build:server": "cross-env NODE_ENV=production webpack --config webpack/webpack.server.prod.js --progress",
     "clean": "rimraf dist",
@@ -16,7 +16,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": ""
   },
-  "author": "",
+  "author": "Dominic Geargeoura / dom@loopdream.com",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.0",
