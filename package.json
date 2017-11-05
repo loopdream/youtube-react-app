@@ -14,7 +14,7 @@
     "build:client": "webpack --config webpack/webpack.client.prod.js --progress",
     "build:server": "webpack --config webpack/webpack.server.prod.js --progress",
     "clean": "rimraf dist",
-    "prestart": "npm run build:client && npm run build:server",
+    "prestart": "npm run build",
     "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": ""
@@ -37,9 +37,7 @@
     "remove-whitespace": "^1.1.0",
     "serialize-javascript": "^1.4.0",
     "source-map-support": "^0.5.0",
-    "tachyons": "^4.9.0"
-  },
-  "devDependencies": {
+    "tachyons": "^4.9.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
@@ -62,6 +60,9 @@
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3",
     "webpack-node-externals": "^1.6.0"
+  },
+  "devDependencies": {
+
   },
   "babel": {
     "presets": [
