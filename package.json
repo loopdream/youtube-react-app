@@ -1,0 +1,69 @@
+{
+  "name": "youtube-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:wp": "webpack-dev-server --config webpack/webpack.client.dev.js --inline --hot",
+    "dev:ssr": "npm-run-all --parallel dev:ssr:*",
+    "dev:ssr:webpack": "webpack --config webpack/webpack.client.dev.js --watch",
+    "dev:ssr:server": "nodemon src/index.js --exec \"node -r babel-register\"",
+    "prestart": "",
+    "start": "",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.0",
+    "babel-polyfill": "^6.26.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-youtube": "^7.5.0",
+    "react-youtube-player": "^2.0.1",
+    "redux": "^3.7.2",
+    "serialize-javascript": "^1.4.0",
+    "source-map-support": "^0.5.0",
+    "tachyons": "^4.9.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "dotenv": "^4.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
+    "nodemon": "^1.12.1",
+    "npm-run-all": "^4.1.1",
+    "path": "^0.12.7",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "react"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  }
+}
