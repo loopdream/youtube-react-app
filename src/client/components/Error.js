@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 export default () => (
-  <div style={style}>
+  <div >
     <h1>Error!</h1>
     <p>Err...?</p>
   </div>
-);
+)

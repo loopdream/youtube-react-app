@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import NoMatch from './NoMatch';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import NoMatch from './NoMatch'
 
 class VideoList extends Component {
   
   constructor(props) {
-    super();
+    super()
   }
 
   renderVideos() {
 
-    let vids = this.props.videos.filter(v => v.thumbnails); // remove videos that dont have thumbs (deleted)
+    let vids = this.props.videos.filter(v => v.thumbnails) // remove videos that dont have thumbs (deleted)
     return vids ? vids.map((v, k) => {
       let {
         title,
@@ -18,7 +18,7 @@ class VideoList extends Component {
         published,
         description,
         thumbnails
-      } = v;
+      } = v
       return (
         <li key={k}>
           <h3>
@@ -34,8 +34,8 @@ class VideoList extends Component {
               alt={title} />
            </Link>
         </li>
-      );
-    }) : <li>Nothing</li> ;
+      )
+    }) : <li>Nothing</li> 
 
   }
 
@@ -48,11 +48,11 @@ class VideoList extends Component {
         </header>
         <ul>{this.renderVideos()}</ul> 
       </main>
-    );
+    )
 
   }
 
 
 
 }
-export default VideoList;
+export default VideoList

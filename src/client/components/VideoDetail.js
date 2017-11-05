@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import YoutubePlayer from 'react-youtube';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import YoutubePlayer from 'react-youtube'
 
 const VideoDetail = ({ video, backToListText }) => {
 
@@ -9,8 +9,8 @@ const VideoDetail = ({ video, backToListText }) => {
     title,
     description,
     published,
-    thumbnails
-  } = video;
+    thumbnails,
+  } = video
 
   const videoOpts = {
     videoId: videoId,
@@ -30,8 +30,8 @@ const VideoDetail = ({ video, backToListText }) => {
       <YoutubePlayer {...videoOpts} />
       <div>{description}</div>
     </article>
-  );
+  )
 }
 
 
-export default VideoDetail;
+export default VideoDetail

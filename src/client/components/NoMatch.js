@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 
 export default () => (
@@ -6,4 +6,4 @@ export default () => (
     <h1>404!</h1>
     <p>The page you requested could not be found.</p>
   </div>
-);
+)

@@ -1,20 +1,18 @@
-import React from 'react';
-import { Route, Link } from 'react-router-dom';
-import VideoList from './VideoList';
-import VideoDetail from './VideoDetail';
-import config from '../../config';
-
-import '../styles/main.scss';
+import React from 'react'
+import { Route, Link } from 'react-router-dom'
+import VideoList from './VideoList'
+import VideoDetail from './VideoDetail'
+import config from '../../config'
 
 const App = ({ videoData }) => {
   
   let { 
     nextPageToken, 
     pageInfo, 
-    videos 
-  } = videoData; 
+    videos, 
+  } = videoData 
 
-  let { pageCopy } = config;
+  let { pageCopy } = config
 
   return (
     <div>
@@ -25,8 +23,8 @@ const App = ({ videoData }) => {
         )
       } />
     </div>
-  );
+  )
 
 }
 
-export default App;
+export default App
