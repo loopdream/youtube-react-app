@@ -46,12 +46,12 @@ app.use('*', async (req, res) => {
     const context = {}
     const markup = render(
       (
-        <Router context={{}} location={req.baseUrl}>
+        <Router context={context} location={req.baseUrl}>
           <App videoData={videoData} />
         </Router>
       ), videoData
     )
-  
+
     res.status(200).send(markup);
 
   } catch (err) {

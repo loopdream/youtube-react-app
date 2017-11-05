@@ -4,9 +4,9 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  context: path.join(__dirname, '../src'),
+  context: path.join(__dirname, '../src/server'),
   devtool: 'source-map',
-  entry: './index.js',
+  entry: './server.js',
   output: {
     path: path.join(__dirname, '../dist'),
     filename: './server.js',
@@ -23,7 +23,10 @@ module.exports = {
           options: {
             presets: [
               'react',
-              ['env']
+              ['env', {
+                'modules': false,
+                targets: { browsers: ['last 2 versions'] }
+              }]
             ],
           },
         },
@@ -31,5 +34,13 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new UglifyJSPlugin({
+      sourceMap: true
+    })
   ]
 };

@@ -7,6 +7,7 @@ const formatData = data => {
     let { videoId, videoPublishedAt } = i.contentDetails
     let d = new Date(videoPublishedAt)
     let published = formatDateToStr(d)
+    description = nl2br(description)
     return { videoId, published, title, description, thumbnails }
   })
   return { nextPageToken, pageInfo, videos }
@@ -27,8 +28,13 @@ const formatDateToStr = date => {
   return str
 }
 
+const nl2br = str => {
+  return str.replace(/(?:\r\n|\r|\n)/g, '<br />');
+}
+
 
 export {
   formatData,
-  formatDateToStr
+  formatDateToStr,
+  nl2br
 }

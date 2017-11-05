@@ -8,6 +8,10 @@ class VideoList extends Component {
     super()
   }
 
+  encodedStr(str) {
+    return { __html: str };
+  }
+
   renderVideos() {
 
     let vids = this.props.videos.filter(v => v.thumbnails) // remove videos that dont have thumbs (deleted)
@@ -27,7 +31,7 @@ class VideoList extends Component {
             </Link>
           </h3>
           <p>{published}</p>
-          <p>{description}</p>
+          <p dangerouslySetInnerHTML={this.encodedStr(description)}></p>
           <Link to={`video/${videoId}`}>
             <img
               src={thumbnails.high.url}
@@ -38,6 +42,7 @@ class VideoList extends Component {
     }) : <li>Nothing</li> 
 
   }
+  
 
   render() {
 
