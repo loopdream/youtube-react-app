@@ -15,8 +15,9 @@
     "build:client": "webpack --config webpack/webpack.client.prod.js",
     "build:server": "webpack --config webpack/webpack.server.prod.js",
     "clean": "rimraf dist",
-    "prestart": "npm run build",
+    "prestart": "npm run build:server",
     "start": "node dist/server.js",
+    "postinstall": "npm run build:client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": ""
   },
