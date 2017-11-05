@@ -1,8 +1,11 @@
 {
   "name": "youtube-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Universal React app to display Youtube videos.",
   "main": "index.js",
+  "engines": {
+    "node": "8.9.0"
+  },
   "scripts": {
     "dev": "npm run clean && npm-run-all --parallel dev:*",
     "dev:webpack": "webpack --config webpack/webpack.client.dev.js --watch",
@@ -12,7 +15,7 @@
     "build:server": "webpack --config webpack/webpack.server.prod.js --progress",
     "clean": "rimraf dist",
     "prestart": "npm run build",
-    "start": "node dist/server.js",
+    "start": "NODE_ENV=production node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": ""
   },

@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
+console.log("process.env.NODE_ENV", process.env.NODE_ENV);
 
 module.exports = {
   context: path.join(__dirname, '../src/client'),
@@ -36,6 +37,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }
+    }),
     new UglifyJSPlugin({
       sourceMap: true
     })
