@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 
 module.exports = {
   context: path.join(__dirname, '../src/client'),
@@ -41,5 +41,3 @@ module.exports = {
   },
   plugins: []
 };
-
- 

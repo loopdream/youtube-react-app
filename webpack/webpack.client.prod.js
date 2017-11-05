@@ -1,20 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, '../src/client'),
-  devtool: 'inline-source-map',
-  entry: './index.js',
+  devtool: 'source-map',
+  entry: './client.js',
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, '../dist'),
     filename: './bundle.js'
-  },
-  devServer: {
-    hot: true,
-    publicPath: '/',
-    historyApiFallback: true
   },
   module: {
     rules: [
@@ -25,22 +20,29 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              'react', 
-              ['env', { targets: { browsers: ['last 2 versions'] } }]
+              'react',
+              ['env', {
+                'modules': false,
+                targets: { browsers: ['last 2 versions'] }
+              }]
             ],
           },
-        },
-      }
+        }
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
     ]
   },
   plugins: [
+    new UglifyJSPlugin({
+      sourceMap: true
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
-    }),
-    new UglifyJSPlugin({
-      sourceMap: true
-    }),
-  ],
+    })
+  ]
 };
