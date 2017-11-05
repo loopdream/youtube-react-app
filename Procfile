@@ -1,1 +1,1 @@
-web: yarn start
+web: yarn start --bind 0.0.0.0
