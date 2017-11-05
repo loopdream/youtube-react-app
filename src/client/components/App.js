@@ -4,6 +4,8 @@ import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
 import config from '../../config';
 
+import '../styles/main.scss';
+
 const App = ({ videoData }) => {
   
   let { 

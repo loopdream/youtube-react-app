@@ -2,14 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import YoutubePlayer from 'react-youtube';
 
-/* 
-{
-  videoId,
-  title,
-  description,
-  published,
-  thumbnails
-} */
 const VideoDetail = ({ video, backToListText }) => {
 
   const {
@@ -20,7 +12,7 @@ const VideoDetail = ({ video, backToListText }) => {
     thumbnails
   } = video;
 
-  const ytOpts = {
+  const videoOpts = {
     videoId: videoId,
     width: '100%',
     height: '100%',
@@ -35,7 +27,7 @@ const VideoDetail = ({ video, backToListText }) => {
         <h1>{title}</h1>
         <p>{published}</p>
       </header>
-      <YoutubePlayer {...ytOpts}  />
+      <YoutubePlayer {...videoOpts} />
       <div>{description}</div>
     </article>
   );
