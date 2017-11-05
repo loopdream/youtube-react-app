@@ -62,6 +62,6 @@ app.use('*', async (req, res) => {
 })
 
 
-const { PORT = 8001 } = process.env
+const PORT = process.env.PORT || 8001
 app.listen(PORT, () => console.log(`Express is listening on port http://localhost:${PORT}`))
 
