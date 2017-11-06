@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 module.exports = {
   context: path.join(__dirname, '../src/client'),
   devtool: 'source-map',
