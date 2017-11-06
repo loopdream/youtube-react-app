@@ -24,6 +24,7 @@ app.use(compression());
 app.use(Express.static('dist')) // set the static asset dir
 console.log('process.env.PORT', console.log(process.env.PORT));
 app.set('port', process.env.PORT);
+
 /* 
 Sever side rendering: use a catch all controller 
 Every request will get piped through this method where we:
