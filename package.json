@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A Universal React app to display Youtube videos.",
   "main": "index.js",
+  "engines": {
+    "node": "8.9.0",
+    "npm": "5.5.1" 
+  },
   "scripts": {
     "dev": "yarn run clean && npm-run-all --parallel dev:*",
     "dev:webpack": "webpack --config webpack/webpack.client.dev.js --watch",
