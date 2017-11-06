@@ -7,7 +7,8 @@ import SourceMapSupport from 'source-map-support'
 import { StaticRouter as Router, matchPath } from 'react-router'
 import { renderToString } from 'react-dom/server'
 import Serialize from 'serialize-javascript'
-import compression from 'compression'
+import Compression from 'compression'
+import { ServerStyleSheet } from 'styled-components'
 import render from './utils/render'
 import config from '../config'
 import App from '../client/components/App'
@@ -20,7 +21,7 @@ const routes = config.routes
 const app = Express()
 
 app.disable('x-powered-by') // remove express header
-app.use(compression());
+app.use(Compression());
 app.use(Express.static('dist')) // set the static asset dir
 /* 
 Sever side rendering: use a catch all controller 
@@ -44,12 +45,19 @@ app.use('*', async (req, res) => {
     const response = await Axios.get(config.apiUrl) 
     const videoData = formatData(response.data)
     const context = {}
+    const sheet = new ServerStyleSheet()
+
+    const htmlStr = renderToString(sheet.collectStyles((
+      <Router context={context} location={req.baseUrl}>
+        <App videoData={videoData} />
+      </Router>
+    )))
+    
+    const styleTags = sheet.getStyleTags()
     const markup = render(
-      (
-        <Router context={context} location={req.baseUrl}>
-          <App videoData={videoData} />
-        </Router>
-      ), videoData
+      htmlStr,
+      videoData,
+      styleTags
     )
 
     res.status(200).send(markup);

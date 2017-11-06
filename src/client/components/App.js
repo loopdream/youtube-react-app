@@ -5,20 +5,27 @@ import VideoDetail from './VideoDetail'
 import Header from './Header'
 import NoMatch from './NoMatch'
 import config from '../../config'
+import styled from 'styled-components'
+
+
+const Main = styled.main`
+    background: black;
+    height: 100vh
+  `;
 
 
 const App = ({ videoData}) => {
   
-  let {   
+  const {   
     nextPageToken, 
     pageInfo, 
     videos, 
   } = videoData 
 
-  let { pageCopy } = config
+  const { pageCopy } = config
 
   return (
-    <main>
+    <Main>
       <Header {...pageCopy} />
       <Route exact path="/" render={() => <VideoList videos={videos} {...pageCopy} />} />
       <Route path="/video/:videoId" render={
@@ -26,8 +33,7 @@ const App = ({ videoData}) => {
           <VideoDetail {...pageCopy} video={videos.find(v => v.videoId === match.params.videoId)} />
         )
       } />
-      <Route component={NoMatch} />
-    </main>
+    </Main>
   )
 
 }
