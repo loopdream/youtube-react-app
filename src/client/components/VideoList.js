@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import NoMatch from './NoMatch'
 
 class VideoList extends Component {
   
@@ -21,11 +20,11 @@ class VideoList extends Component {
       } = v
       return (
         <li key={k}>
-          <h3>
+          <h2>
             <Link to={`video/${videoId}`}>
               {title}
             </Link>
-          </h3>
+          </h2>
           <p>{published}</p>
           <p dangerouslySetInnerHTML={{ __html: description }}></p>
           <Link to={`video/${videoId}`}>
@@ -43,12 +42,9 @@ class VideoList extends Component {
   render() {
 
     return (
-      <main>
-        <header>
-          <h1>{this.props.indexHeading}</h1>
-        </header>
+      <section>
         <ul>{this.renderVideos()}</ul> 
-      </main>
+      </section>
     )
 
   }

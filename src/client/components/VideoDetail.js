@@ -21,9 +21,6 @@ const VideoDetail = ({ video, backToListText }) => {
   return (
     <article>
       <header>
-        <Link to="/">
-          {backToListText}
-        </Link>
         <h1>{title}</h1>
         <p>{published}</p>
       </header>
