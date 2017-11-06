@@ -4,15 +4,15 @@
   "description": "A Universal React app to display Youtube videos.",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run clean && npm-run-all --parallel dev:*",
+    "dev": "yarn run clean && npm-run-all --parallel dev:*",
     "dev:webpack": "webpack --config webpack/webpack.client.dev.js --watch",
     "dev:server": "nodemon src/server/server.js --exec \"node -r babel-register\"",
     "build": "npm-run-all --parallel build:*",
     "build:client": "webpack --config webpack/webpack.client.prod.js",
     "build:server": "webpack --config webpack/webpack.server.prod.js",
     "clean": "rimraf dist",
-    "start:local": "npm run build && node dist/server.js",
-    "start": "npm run build && node dist/server.js",
+    "prestart": "yarn run build",
+    "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": ""
   },

@@ -22,9 +22,7 @@ const app = Express()
 app.disable('x-powered-by') // remove express header
 app.use(compression());
 app.use(Express.static('dist')) // set the static asset dir
-console.log('process.env', console.log(process.env));
-app.set('port', process.env.PORT);
-
+app.set('port', (process.env.PORT || 5000));
 /* 
 Sever side rendering: use a catch all controller 
 Every request will get piped through this method where we:
@@ -64,10 +62,12 @@ app.use('*', async (req, res) => {
 
 })
 
-app.listen(app.get('port'), (err) => {
+
+const PORT = process.env.PORT || 5000
+app.listen(PORT, (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log(`server started port: ${port}`);
+    console.log(`server started port: ${PORT}`);
   }
 });
