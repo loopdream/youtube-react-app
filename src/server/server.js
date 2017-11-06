@@ -64,6 +64,10 @@ app.use('*', async (req, res) => {
 
 })
 
-
-app.listen(app.get('port'), () => console.log(`Express is listening on port ${app.get('port')}`))
-
+app.listen(app.get('port'), (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(`server started port: ${port}`);
+  }
+});
