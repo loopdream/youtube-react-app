@@ -22,7 +22,7 @@ const app = Express()
 app.disable('x-powered-by') // remove express header
 app.use(compression());
 app.use(Express.static('dist')) // set the static asset dir
-console.log('process.env.PORT', console.log(process.env.PORT));
+console.log('process.env', console.log(process.env));
 app.set('port', process.env.PORT);
 
 /* 
