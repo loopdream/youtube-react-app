@@ -23,10 +23,7 @@ module.exports = {
           options: {
             presets: [
               'react',
-              ['env', {
-                'modules': false,
-                targets: { browsers: ['last 2 versions'] }
-              }]
+              ['env']
             ],
           },
         },
