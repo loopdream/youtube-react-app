@@ -1,4 +1,0 @@
-@function px2em($target, $context: $base-font-size) {
-  @if $target == 0 { @return 0 }
-  @return $target / $context + 0em;
-}

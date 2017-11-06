@@ -6,12 +6,7 @@ import Header from './Header'
 import NoMatch from './NoMatch'
 import config from '../../config'
 import styled from 'styled-components'
-
-
-const Main = styled.main`
-    background: black;
-    height: 100vh
-  `;
+import { colors, mediaQueries } from '../styles/variables'
 
 
 const App = ({ videoData}) => {
@@ -24,15 +19,28 @@ const App = ({ videoData}) => {
 
   const { pageCopy } = config
 
+  const Main = styled.main`
+    background: ${colors.white};
+    font-family: 'Roboto', sans-serif;
+    color: ${colors.black};
+  `;
+
+  const Container = styled.div`
+    margin: 0 auto;
+    width: 900px;
+  `;
+
   return (
     <Main>
       <Header {...pageCopy} />
-      <Route exact path="/" render={() => <VideoList videos={videos} {...pageCopy} />} />
-      <Route path="/video/:videoId" render={
-        ({ match }) => (
-          <VideoDetail {...pageCopy} video={videos.find(v => v.videoId === match.params.videoId)} />
-        )
-      } />
+      <Container>    
+        <Route exact path="/" render={() => <VideoList videos={videos} {...pageCopy} />} />
+        <Route path="/video/:videoId" render={
+          ({ match }) => (
+            <VideoDetail {...pageCopy} video={videos.find(v => v.videoId === match.params.videoId)} />
+          )
+        } />
+      </Container>
     </Main>
   )
 

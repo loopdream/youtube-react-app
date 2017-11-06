@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import { colors, mediaQueries } from '../styles/variables'
 
 class VideoList extends Component {
   
@@ -10,6 +12,7 @@ class VideoList extends Component {
   renderVideos() {
 
     let vids = this.props.videos.filter(v => v.thumbnails) // remove videos that dont have thumbs (deleted)
+    
     return vids ? vids.map((v, k) => {
       let {
         title,
@@ -18,6 +21,8 @@ class VideoList extends Component {
         description,
         thumbnails
       } = v
+
+
       return (
         <li key={k}>
           <h2>

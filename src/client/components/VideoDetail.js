@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import YoutubePlayer from 'react-youtube'
+import styled from 'styled-components'
+import { colors, mediaQueries } from '../styles/variables'
+
 
 const VideoDetail = ({ video, backToListText }) => {
 
