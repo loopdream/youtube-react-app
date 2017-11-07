@@ -35,12 +35,27 @@ Install Node JS and NPM
 brew install node
 ```
 
+Install Nodemon for automatically restarting the node server in development.
+
+```shell
+npm i -g nodemon
+```
+
+Install yarn and lol at the irony of the following.
+
+```shell
+npm i -g yarn 
+```
+
+
+
 ## Getting Started
 
-Before getting started make sure you have satisfied all the [Prerequisites](#prerequisites) below.
+Before getting started make sure you have satisfied all the [Prerequisites](#prerequisites).
 
 
 Export the codebase into your local environment and 
+
 
 ```shell
 git clone git@github.com:loopdream/youtube-react-app.git
@@ -49,50 +64,47 @@ git clone git@github.com:loopdream/youtube-react-app.git
 
 ### Installing
 
-
-
-Say what the step will be
-
-```
-Give the example
+cd into cloned repo
+```shell
+cd youtube-react-app
 ```
 
-And repeat
+Install all the NPM dependencies
 
+```shell
+yarn install 
 ```
-until finished
-```
+
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Development
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+
+
+## Running the tests
+
+TBC
+
+## Styling
+
+TBC
+
+
+
+
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Babel](https://babeljs.io) ES2017+ support 
+* [Express.js](https://expressjs.com/) - Node server
+* [Webpack](https://webpack.js.org/) Asset & module bundler
+* [React](https://reactjs.org/) View framework
+* [React Router v4](https://reacttraining.com/react-router/) Routing library for React 
+* [Styled Components](https://www.styled-components.com/) ES6 styling library for React component
+
 
  
