@@ -2,11 +2,23 @@
   "name": "youtube-app",
   "version": "1.0.0",
   "description": "A Universal React app to display Youtube videos.",
+  "author": "Dominic Geargeoura / dom@loopdream.com",
   "main": "index.js",
   "engines": {
     "node": "8.9.0",
     "npm": "5.5.1"
   },
+  "keywords": [
+    "react",
+    "universal",
+    "express",
+    "isomorphic",
+    "ssr",
+    "youtube",
+    "video",
+    "node.js",
+    "webpack"
+  ],
   "scripts": {
     "dev": "yarn run clean && npm-run-all --parallel dev:*",
     "dev:webpack": "webpack --config webpack/webpack.client.dev.js --watch",
@@ -14,18 +26,20 @@
     "build": "npm-run-all --parallel build:*",
     "build:client": "webpack --config webpack/webpack.client.prod.js",
     "build:server": "webpack --config webpack/webpack.server.prod.js",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist && mkdir dist",
     "prestart": "yarn run build",
     "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": ""
   },
-  "author": "Dominic Geargeoura / dom@loopdream.com",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.0",
     "babel-polyfill": "^6.26.0",
     "compression": "^1.7.1",
+    "eslint": "^4.10.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-react": "^7.4.0",
     "express": "^4.16.2",
     "express-minify": "^1.0.0",
     "html-minifier": "^3.5.6",

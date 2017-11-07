@@ -30,10 +30,14 @@ const Header = ({ indexHeading, backToListText }) => {
 	  font-weight: 700; 
   `;
 
+  const formatHeadingStr = (str) => {
+    return str.split(' ').map(word => `<span>${word}</span>`).join(' ')
+  }
+
   return (
     <Header>
       <Container>
-        <Route exact path="/" render={() => <Heading>{indexHeading}</Heading>} />
+        <Route exact path="/" render={() => <Heading dangerouslySetInnerHTML={{ __html: formatHeadingStr(indexHeading) }}></Heading>} />
         <Route path="/video/:videoId" render={
           ({ match }) => (
             <StyledLink to="/">{backToListText}</StyledLink>
