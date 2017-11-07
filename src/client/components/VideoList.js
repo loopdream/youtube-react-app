@@ -10,6 +10,7 @@ class VideoList extends Component {
     super()
   }
 
+
   renderVideos() {
     let vids = this.props.videos.filter(v => v.thumbnails) // remove videos that dont have thumbs (deleted)
     return vids ? vids.map((v, k) => {
@@ -19,15 +20,25 @@ class VideoList extends Component {
   
 
   render() {
-  
+    
+    // styles 
+    const ListingSection = styled.section`
+      padding: 1.5rem 1.5rem 0 1.5rem;
+      border-top: 10px solid ${colors.green};
+    `
+
     const List = styled.ul`
-      
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
     `; 
 
+    // JSX 
+
     return (
-      <section>
-        <ul>{this.renderVideos()}</ul> 
-      </section>
+      <ListingSection>
+        <List>{this.renderVideos()}</List> 
+      </ListingSection>
     )
 
   }

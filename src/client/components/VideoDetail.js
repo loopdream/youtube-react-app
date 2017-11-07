@@ -7,6 +7,8 @@ import { colors, mediaQueries } from '../styles/variables'
 
 const VideoDetail = ({ video, backToListText }) => {
 
+  // Styles
+
   const {
     videoId,
     title,
@@ -23,19 +25,21 @@ const VideoDetail = ({ video, backToListText }) => {
  
   const YoutubePlayer = styled.iframe`
 
-  `;
+  `
 
   const Title = styled.h1`
     
-  `;
+  `
 
   const Published = styled.p`
   
-  `;
+  `
 
   const Description = styled.p`
   
-  `;
+  `
+
+  // JSX
 
   return (
     <article>

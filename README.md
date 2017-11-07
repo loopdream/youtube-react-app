@@ -2,7 +2,8 @@
 >
 A simple app that consumes data from [this YouTube API  JSON FEED ](https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails,status&maxResults=10&playlistId=PLSi28iDfECJPJYFA4wjlF5KUucFvc0qbQ&key=AIzaSyCuv_16onZRx3qHDStC-FUp__A6si-fStw)  and then displays the results, which in this instance is a list of videos that belong to a playlist. Clicking on a video should then show a detail page of that video and its meta data. All pages should be handled by React, use modern  tooling, and be server side rendered (SSR).
 
-###  Requisites
+[See the app in action on Heroku](https://beyond-youtube-react-app.herokuapp.com/video/X0qwQqwKLlM)
+###  Brief
 * The app should be built using responsive techniques to behave well on a variety of devices
 * Look and feel is up to you
 * Layout should match the provided wireframes
@@ -19,7 +20,7 @@ A simple app that consumes data from [this YouTube API  JSON FEED ](https://www.
 * Work to be hosted on your GIT repository of choice (github, bitbucket etc.)
 * A running version of the test should be made available online (e.g. github pages, heroku etc.)
 
-[See the app in action on Heroku](https://beyond-youtube-react-app.herokuapp.com/video/X0qwQqwKLlM)
+
 
 ### Prerequisites
 >Global dependencies or any other tools

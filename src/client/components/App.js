@@ -11,6 +11,8 @@ import { colors, mediaQueries } from '../styles/variables'
 
 const App = ({ videoData}) => {
   
+  // vars 
+
   const {   
     nextPageToken, 
     pageInfo, 
@@ -19,17 +21,20 @@ const App = ({ videoData}) => {
 
   const { pageCopy } = config
 
+  // Styles
+
   const Main = styled.main`
-    background: ${colors.white};
+    background: ${colors.lightGrey};
     font-family: 'Roboto', sans-serif;
     color: ${colors.black};
-  `;
+  `
 
   const Container = styled.div`
     margin: 0 auto;
-    width: 900px;
-  `;
+  `
 
+  // JSX 
+  
   return (
     <Main>
       <Header {...pageCopy} />
