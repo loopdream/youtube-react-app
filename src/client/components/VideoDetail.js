@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import YoutubePlayer from 'react-youtube'
+//import YoutubePlayer from 'react-youtube'
 import styled from 'styled-components'
 import { colors, mediaQueries } from '../styles/variables'
 
@@ -20,14 +20,34 @@ const VideoDetail = ({ video, backToListText }) => {
     width: '100%',
     height: '100%',
   }
+ 
+  const YoutubePlayer = styled.iframe`
+
+  `;
+
+  const Title = styled.h1`
+    
+  `;
+
+  const Published = styled.p`
+  
+  `;
+
+  const Description = styled.p`
+  
+  `;
 
   return (
     <article>
       <header>
-        <h1>{title}</h1>
-        <p>{published}</p>
+        <Title>{title}</Title>
+        <Published>{published}</Published>
       </header>
-      <YoutubePlayer {...videoOpts} />
+      <YoutubePlayer
+        width="560" height="315"
+        src={`https://www.youtube.com/embed/${videoId}?html5=1&amp;rel=0&amp;showinfo=0`}
+        frameBorder="0" gesture="media" allowfullscreen>
+      </YoutubePlayer>
       <div dangerouslySetInnerHTML={{ __html: description }}></div>
     </article>
   )
