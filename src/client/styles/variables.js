@@ -1,8 +1,9 @@
 const colors =  {
   green: '#0c6',
-  black: '#111',
+  black: '#111111',
   lightGrey: '#ebebeb',
-  white: '#fff',
+  white: '#ffffff',
+  navy: '#001f3f'
 }
 
 const mediaQueries = {
