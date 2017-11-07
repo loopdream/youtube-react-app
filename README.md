@@ -54,7 +54,7 @@ npm i -g yarn
 Before getting started make sure you have satisfied all the [Prerequisites](#prerequisites).
 
 
-Export the codebase into your local environment and 
+Clone the codebase into your local environment 
 
 
 ```shell
@@ -75,8 +75,6 @@ Install all the NPM dependencies
 yarn install 
 ```
 
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Development
 
