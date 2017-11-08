@@ -24,7 +24,7 @@ const App = ({ videoData}) => {
   // Styles
   const Main = styled.main`
     background: ${colors.lightGrey};
-    font-family: 'ibm-plex-mono', sans-serif;
+    font-family: 'ibm-plex-mono',-apple-system,helvetica neue, helvetica, roboto, arial, sans-serif;
     color: ${colors.black};
   `
 
