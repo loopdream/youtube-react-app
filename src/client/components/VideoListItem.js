@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { fonts, colors, mediaQueries, fontSizes } from '../styles/variables'
+import { media, textLink } from '../styles/style-utils'
 
 const VideoListItem = ({ 
   title,
@@ -37,14 +38,9 @@ const VideoListItem = ({
   `
 
   const TitleLink = styled(Link) `
-    text-decoration: none; 
-    color: ${colors.green};
+    
     text-transform: uppercase;
-    &:hover {
-      color: ${colors.black};
-      text-decoration: line-through;
-      cursor: pointer;
-    }
+    ${textLink()}
   `
 
   const Published = styled.p`

@@ -8,9 +8,10 @@ const colors =  {
   darkGrey: '#333333',
 }
 
-const mediaQueries = {
-  small: '481',
-  medium: '768px',
+const mediaQuerySizes = {
+  small: 481,
+  medium: 768,
+  large: 992
 }
 
 const fonts = {
@@ -38,7 +39,7 @@ const fontSizes = {
 
 export {
   colors,
-  mediaQueries,
+  mediaQuerySizes,
   fonts,
   fontSizes,
 }

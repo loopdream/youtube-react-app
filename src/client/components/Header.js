@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { fonts, colors, mediaQueries, fontSizes } from '../styles/variables'
+import { fonts, colors, mediaQuerySizes, fontSizes } from '../styles/variables'
+import { media, textLink } from '../styles/style-utils';
 
 const Header = ({ indexHeading, backToListText }) => {
   
@@ -15,6 +16,9 @@ const Header = ({ indexHeading, backToListText }) => {
 
   const Container = styled.div`
     margin: 0 auto;
+     ${media.small`
+      display: flex;
+    `}
   `
 
   const Heading = styled.h1`
@@ -27,8 +31,8 @@ const Header = ({ indexHeading, backToListText }) => {
 
  
   const StyledLink = styled(Link) `
-	  color: ${colors.green};
-	  font-weight: 700; 
+    font-weight: 700; 
+    ${textLink()}
   `
 
   // Helpers
@@ -42,7 +46,7 @@ const Header = ({ indexHeading, backToListText }) => {
   return (
     <Header>
       <Container>
-        <Route exact path="/" render={() => <Heading dangerouslySetInnerHTML={{ __html: formatHeadingStr(indexHeading) }}></Heading>} />
+        <Heading dangerouslySetInnerHTML={{ __html: formatHeadingStr(indexHeading) }}></Heading>
         <Route path="/video/:videoId" render={
           ({ match }) => (
             <StyledLink to="/">{backToListText}</StyledLink>

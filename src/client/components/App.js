@@ -7,6 +7,7 @@ import NoMatch from './NoMatch'
 import config from '../../config'
 import styled from 'styled-components'
 import { colors, mediaQueries } from '../styles/variables'
+import { mq } from '../styles/variables'
 
 
 const App = ({ videoData}) => {
