@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { colors, mediaQueries } from '../styles/variables'
 import VideoListItem from './VideoListItem'
-
+import { media } from '../styles/style-utils'
 class VideoList extends Component {
   
   constructor(props) {
@@ -24,14 +24,14 @@ class VideoList extends Component {
     // styles 
     const ListingSection = styled.section`
       padding: 1.5rem 1.5rem 0 1.5rem;
-      border-top: 10px solid ${colors.green};
-    `
+      ${media.medium`
+        padding: 2.5rem 2.5rem 0 2.5rem;
+      `}`
 
     const List = styled.ul`
       padding: 0;
       margin: 0;
-      list-style-type: none;
-    `; 
+      list-style-type: none;`
 
     // JSX 
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { fonts, colors, mediaQuerySizes, fontSizes } from '../styles/variables'
+import { fonts, colors, mediaQuerySizes as sizes, fontSizes } from '../styles/variables'
 import { media, textLink } from '../styles/style-utils';
 
 const Header = ({ indexHeading, backToListText }) => {
@@ -12,12 +12,22 @@ const Header = ({ indexHeading, backToListText }) => {
     background: ${colors.white};
     border-bottom: 20px solid ${colors.darkGrey};
     padding: 1.5rem 2.5rem;
+    ${media.small`
+      padding: 2rem 3rem;
+    `}
+    ${media.medium`
+      padding: 3rem 5rem;
+    `}
   `;
 
   const Container = styled.div`
     margin: 0 auto;
-     ${media.small`
+    ${media.small`
       display: flex;
+      justify-content: space-between;
+    `}
+    ${media.large`
+      width: ${sizes.large}px
     `}
   `
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { fonts, colors, mediaQueries, fontSizes } from '../styles/variables'
-import { media, textLink } from '../styles/style-utils'
+import { fonts, colors, fontSizes } from '../styles/variables'
+import { media, textLink, truncate } from '../styles/style-utils'
 
 const VideoListItem = ({ 
   title,
@@ -25,6 +25,14 @@ const VideoListItem = ({
     &:hover {
       box-shadow: 0 0 30px 0 rgba(0,0,0,0.38);
     }
+    ${media.small`
+      padding: 1.5rem;
+    `}
+    ${media.medium`
+      display: flex;
+      flex-direction: row-reverse;
+       padding: 2.5rem;
+    `}
   ` 
   
   const Title = styled.h2`
@@ -59,10 +67,11 @@ const VideoListItem = ({
     letter-spacing: 0.02rem;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     display: none;
+    
+    ${media.medium`
+      display: block;
+    `}
   `
 
   const ImageThumbLink = styled(Link)`
@@ -71,24 +80,35 @@ const VideoListItem = ({
     &:hover {
       cursor: pointer;
     }
+    ${media.medium`
+      width: 60%;
+    `}
   `
 
   const ImageThumb = styled.img`
     width: 100%;
     display block;
   `
+  const VideoMeta = styled.div`
+  ${media.medium`
+    width: 40%;
+    padding-left: 2rem;
+  `}`
+
 
   // JSX
  
   return (
     <ListItem>
-      <Title>
-        <TitleLink to={`video/${videoId}`}>
-          {title}
-        </TitleLink>
-      </Title>
-      <Published>{published}</Published>
-      <Description dangerouslySetInnerHTML={{ __html: description }}></Description>
+      <VideoMeta>
+        <Title>
+          <TitleLink to={`video/${videoId}`}>
+            {title}
+          </TitleLink>
+        </Title>
+        <Published>{published}</Published>
+        <Description dangerouslySetInnerHTML={{ __html: description }}></Description>
+      </VideoMeta>
       <ImageThumbLink to={`video/${videoId}`}>
         <ImageThumb
           src={thumbnails.high.url}

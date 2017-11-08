@@ -6,14 +6,13 @@ import Header from './Header'
 import NoMatch from './NoMatch'
 import config from '../../config'
 import styled from 'styled-components'
-import { colors, mediaQueries } from '../styles/variables'
-import { mq } from '../styles/variables'
+import { colors, mediaQuerySizes as sizes } from '../styles/variables'
+import { media, container } from '../styles/style-utils'
 
 
 const App = ({ videoData}) => {
   
   // vars 
-
   const {   
     nextPageToken, 
     pageInfo, 
@@ -23,7 +22,6 @@ const App = ({ videoData}) => {
   const { pageCopy } = config
 
   // Styles
-
   const Main = styled.main`
     background: ${colors.lightGrey};
     font-family: 'Roboto', sans-serif;
@@ -32,6 +30,9 @@ const App = ({ videoData}) => {
 
   const Container = styled.div`
     margin: 0 auto;
+    ${media.large`
+      width: ${sizes.large}px
+    `}
   `
 
   // JSX 

@@ -35,3 +35,12 @@ export const textLink = () => {
   `
 }
 
+export const container = () => {
+  return `
+    margin: 0 auto;
+    ${media.large`
+      width: ${sizes.large}px
+    `}
+  `
+}
+

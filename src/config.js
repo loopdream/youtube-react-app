@@ -8,7 +8,7 @@ const config = {
     '/video/:videoId',
   ],
   pageCopy: {
-    indexHeading: 'My YouTube Playlist.',
+    indexHeading: 'YouTube Playlist.',
     backToListText: 'Back to list of videos',
   },
 }
