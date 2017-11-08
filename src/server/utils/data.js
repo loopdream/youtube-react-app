@@ -9,8 +9,8 @@ const formatData = data => {
     let { videoId, videoPublishedAt } = i.contentDetails
     let d = new Date(videoPublishedAt)
     let published = formatDateToStr(d)
-    let truncatedDescription = Truncate(description, 200);
-    description = nl2br(description, '<br/>')
+    let truncatedDescription = Truncate(description, 120);
+    description = nl2br(findLinksAndAddHrefs(description), '<br/>')
     return { videoId, published, title, description, truncatedDescription, thumbnails }
   })
   return { nextPageToken, pageInfo, videos }
@@ -31,6 +31,11 @@ const formatDateToStr = date => {
   return str
 }
 
+const findLinksAndAddHrefs = str => {
+  return str.replace(/(http:\/\/[^\s]+)/gi, '<a href="$1">$1</a>')
+}
+
+
 const nl2br = (str, rStr) => {
   return str.replace(/(?:\r\n|\r|\n)/g, rStr)
 }
@@ -40,4 +45,5 @@ export {
   formatData,
   formatDateToStr,
   nl2br,
+  findLinksAndAddHrefs,
 }

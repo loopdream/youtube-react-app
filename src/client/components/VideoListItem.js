@@ -31,8 +31,8 @@ const VideoListItem = ({
     ${media.medium`
       display: flex;
       flex-direction: row-reverse;
-       padding: 2.5rem;
-       margin-bottom: 2.5rem;
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
     `}
   ` 
   
@@ -43,8 +43,11 @@ const VideoListItem = ({
     font-size: ${fontSizes.f3};
     line-height: 1.5rem;
     ${media.medium`
-      width: 85%;
+      width: 100%;
       line-height: 1.7rem;
+    `}
+    ${media.large`
+      width: 85%;
     `}
   `
 
@@ -57,13 +60,16 @@ const VideoListItem = ({
     letter-spacing: 0.025rem;
     color: ${colors.midGrey};
     margin-top: 0;
+    ${media.medium`
+      font-size: ${fontSizes.f7};
+    `}
   `
 
   const Description = styled.p`
-    font-family: 'ibm-plex-sans', sans-serif;
+
     color: ${colors.darkGrey};
-    font-size: ${fontSizes.f5};
-    line-height: 1.5rem;
+    font-size: ${fontSizes.f6};
+    line-height: 1.2rem;
     letter-spacing: 0.02rem;
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -74,7 +80,6 @@ const VideoListItem = ({
   `
 
   const ImageThumbLink = styled(Link)`
-    border: 2px solid ${colors.black};
     display: block;
     &:hover {
       cursor: pointer;
@@ -87,8 +92,9 @@ const VideoListItem = ({
   const ImageThumb = styled.img`
     width: 100%;
     display block;
+    border: 2px solid ${colors.black};
   `
-  const VideoMeta = styled.div`
+  const VideoDetails = styled.div`
   ${media.medium`
     width: 40%;
     padding-left: 2rem;
@@ -99,7 +105,7 @@ const VideoListItem = ({
  
   return (
     <ListItem>
-      <VideoMeta>
+      <VideoDetails>
         <Title>
           <TitleLink to={`video/${videoId}`}>
             {title}
@@ -107,7 +113,7 @@ const VideoListItem = ({
         </Title>
         <Published>{published}</Published>
         <Description>{truncatedDescription}</Description>
-      </VideoMeta>
+      </VideoDetails>
       <ImageThumbLink to={`video/${videoId}`}>
         <ImageThumb
           src={thumbnails.high.url}

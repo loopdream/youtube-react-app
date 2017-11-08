@@ -43,6 +43,22 @@ const Header = ({ indexHeading, backToListText }) => {
     font-weight: 700; 
     align-self: flex-end;
     ${textLink()}
+    padding-left: .4rem;
+    &:before {
+      border-style: solid;
+      border-width: 0.25em 0.25em 0 0;
+      content: '';
+      display: inline-block;
+      height: 0.45em;
+      left: 0.15em;
+      position: relative;
+      top: .4rem;
+      transform: rotate(-45deg);
+      vertical-align: top;
+      width: 0.45em;
+      left: -.4rem;
+      transform: rotate(-135deg);
+    }
   `
 
   // Helpers
