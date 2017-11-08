@@ -6,26 +6,15 @@ const colors =  {
   navy: '#001f3f',
   midGrey: '#a5a8a8',
   darkGrey: '#333333',
+  youTubeRed: '#e30000',
 }
 
 const mediaQuerySizes = {
   small: 481,
   medium: 768,
-  large: 992
+  large: 992,
 }
 
-const fonts = {
-  roboto: {
-    fontFamily: '"Roboto", sans-serif',
-    weights: {
-      thin: 100,
-      light: 400,
-      medium: 500,
-      bold: 700,
-      heavy: 900,
-    }
-  }
-}
 
 const fontSizes = {
   f1: '3rem',
@@ -40,6 +29,5 @@ const fontSizes = {
 export {
   colors,
   mediaQuerySizes,
-  fonts,
   fontSizes,
 }

@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { colors, mediaQueries } from '../styles/variables'
 import VideoListItem from './VideoListItem'
 import { media } from '../styles/style-utils'
+import { mediaQuerySizes as sizes } from '../styles/variables'
+
 class VideoList extends Component {
   
   constructor(props) {
@@ -24,8 +26,12 @@ class VideoList extends Component {
     // styles 
     const ListingSection = styled.section`
       padding: 1.5rem 1.5rem 0 1.5rem;
+      margin: 0 auto;
       ${media.medium`
         padding: 2.5rem 2.5rem 0 2.5rem;
+      `}
+      ${media.large`
+        width: ${sizes.large}px
       `}`
 
     const List = styled.ul`

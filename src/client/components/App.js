@@ -24,15 +24,12 @@ const App = ({ videoData}) => {
   // Styles
   const Main = styled.main`
     background: ${colors.lightGrey};
-    font-family: 'Roboto', sans-serif;
+    font-family: 'ibm-plex-mono', sans-serif;
     color: ${colors.black};
   `
 
   const Container = styled.div`
-    margin: 0 auto;
-    ${media.large`
-      width: ${sizes.large}px
-    `}
+    border-top: 6px solid ${colors.green};
   `
 
   // JSX 

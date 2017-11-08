@@ -8,6 +8,7 @@ import { StaticRouter as Router, matchPath } from 'react-router'
 import { renderToString } from 'react-dom/server'
 import Serialize from 'serialize-javascript'
 import Compression from 'compression'
+import Minify from 'harp-minify'
 import { ServerStyleSheet } from 'styled-components'
 import render from './utils/render'
 import config from '../config'
@@ -20,9 +21,11 @@ SourceMapSupport.install()
 const routes = config.routes
 const app = Express()
 
-app.disable('x-powered-by') // remove express header
+app.disable('x-powered-by')
 app.use(Compression());
-app.use(Express.static('dist')) // set the static asset dir
+app.use(Express.static('dist')) 
+
+
 /* 
 Sever side rendering: use a catch all controller 
 Every request will get piped through this method where we:
@@ -41,7 +44,7 @@ app.use('*', async (req, res) => {
   }
 
   try {
-
+    
     const response = await Axios.get(config.apiUrl) 
     const videoData = formatData(response.data)
     const context = {}
@@ -53,7 +56,7 @@ app.use('*', async (req, res) => {
       </Router>
     )))
     
-    const styleTags = sheet.getStyleTags()
+    const styleTags = Minify.css(sheet.getStyleTags())
     const markup = render(
       htmlStr,
       videoData,

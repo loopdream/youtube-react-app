@@ -1,14 +1,17 @@
+import Truncate from 'truncate'
+
 // Massage youtube data for our needs
 const formatData = data => {
-  let { nextPageToken, pageInfo, items } = data
-  let videosWithThumb = items.filter(v => v.thumbnails !== 'undefined' ) // remove entries with no thumbs
-  let videos = videosWithThumb.map(i => {
+  const { nextPageToken, pageInfo, items } = data
+  const videosWithThumb = items.filter(v => v.thumbnails !== 'undefined' ) // remove entries with no thumbs
+  const videos = videosWithThumb.map(i => {
     let { thumbnails, title, description, resourceId } = i.snippet
     let { videoId, videoPublishedAt } = i.contentDetails
     let d = new Date(videoPublishedAt)
     let published = formatDateToStr(d)
-    description = nl2br(description)
-    return { videoId, published, title, description, thumbnails }
+    let truncatedDescription = Truncate(description, 200);
+    description = nl2br(description, '<br/>')
+    return { videoId, published, title, description, truncatedDescription, thumbnails }
   })
   return { nextPageToken, pageInfo, videos }
 }
@@ -28,13 +31,13 @@ const formatDateToStr = date => {
   return str
 }
 
-const nl2br = str => {
-  return str.replace(/(?:\r\n|\r|\n)/g, ' ');
+const nl2br = (str, rStr) => {
+  return str.replace(/(?:\r\n|\r|\n)/g, rStr)
 }
 
 
 export {
   formatData,
   formatDateToStr,
-  nl2br
+  nl2br,
 }

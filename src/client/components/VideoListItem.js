@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { fonts, colors, fontSizes } from '../styles/variables'
+import { colors, fontSizes } from '../styles/variables'
 import { media, textLink, truncate } from '../styles/style-utils'
 
 const VideoListItem = ({ 
@@ -9,8 +9,9 @@ const VideoListItem = ({
   videoId,
   published,
   description,
+  truncatedDescription,
   thumbnails,
-  k
+  k,
  }) => {
 
   // Styles
@@ -21,7 +22,6 @@ const VideoListItem = ({
     box-shadow: 0 0 30px 0 rgba(0,0,0,0.18);
     margin-bottom: 1.5rem;
     transition: box-shadow 500ms;
-    border-radius: .25rem;
     &:hover {
       box-shadow: 0 0 30px 0 rgba(0,0,0,0.38);
     }
@@ -32,35 +32,35 @@ const VideoListItem = ({
       display: flex;
       flex-direction: row-reverse;
        padding: 2.5rem;
+       margin-bottom: 2.5rem;
     `}
   ` 
   
   const Title = styled.h2`
-    font-weight: ${fonts.roboto.weights.light};
     margin-top: 0;
     width: 70%;
     margin-bottom: .5rem;
-    font-size: ${fontSizes.f4};
-    font-weight: ${fonts.roboto.weights.medium};
-    line-height: 1.3rem;
+    font-size: ${fontSizes.f3};
+    line-height: 1.5rem;
+    ${media.medium`
+      width: 85%;
+      line-height: 1.7rem;
+    `}
   `
 
   const TitleLink = styled(Link) `
-    
-    text-transform: uppercase;
     ${textLink()}
   `
 
   const Published = styled.p`
-    font-weight: ${fonts.roboto.weights.thin};
     font-size: ${fontSizes.f6};
     letter-spacing: 0.025rem;
-    color: ${colors.black};
+    color: ${colors.midGrey};
     margin-top: 0;
   `
 
   const Description = styled.p`
-    font-weight: ${fonts.roboto.weights.light};
+    font-family: 'ibm-plex-sans', sans-serif;
     color: ${colors.darkGrey};
     font-size: ${fontSizes.f5};
     line-height: 1.5rem;
@@ -68,7 +68,6 @@ const VideoListItem = ({
     overflow-wrap: break-word;
     word-wrap: break-word;
     display: none;
-    
     ${media.medium`
       display: block;
     `}
@@ -107,7 +106,7 @@ const VideoListItem = ({
           </TitleLink>
         </Title>
         <Published>{published}</Published>
-        <Description dangerouslySetInnerHTML={{ __html: description }}></Description>
+        <Description>{truncatedDescription}</Description>
       </VideoMeta>
       <ImageThumbLink to={`video/${videoId}`}>
         <ImageThumb
