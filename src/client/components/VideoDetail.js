@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import NoMatch from './NoMatch'
 import { media, container } from '../styles/style-utils'
 import { colors, fontSizes, mediaQuerySizes as sizes } from '../styles/variables'
 
 
 const VideoDetail = ({ video, backToListText }) => {
 
+  
+  if (!video || video === undefined || video === null) {
+    return <NoMatch />
+  } 
   // Styles
 
   const {
@@ -99,6 +104,7 @@ const VideoDetail = ({ video, backToListText }) => {
       width: 40%;
     `}
   `
+
 
 
   return (
