@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import { colors, mediaQuerySizes as sizes, fontSizes } from '../styles/variables'
 import { media, textLink, linkWithChevron, container } from '../styles/style-utils';
 
+
 const Header = ({ indexHeading, backToListText }) => {
   
   // Styles
-
   const Header = styled.header`
     background: ${colors.white};
     border-bottom: 20px solid ${colors.darkGrey};
