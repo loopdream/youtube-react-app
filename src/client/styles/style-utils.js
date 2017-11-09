@@ -11,6 +11,8 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
   return acc
 }, {})
 
+
+
 // truncate
 export const truncate = width => {
   return `
@@ -21,8 +23,7 @@ export const truncate = width => {
   `
 }
 
-
-// truncate
+// Link text
 export const textLink = () => {
   return `
     color: ${colors.green};
