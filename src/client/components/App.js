@@ -20,11 +20,9 @@ const App = ({ videoData}) => {
   } = videoData 
 
   const { pageCopy } = config
-
+  
   // Styles
   const Main = styled.main`
-    background: ${colors.lightGrey};
-    background-image: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,.5) 20px, rgba(255,255,255,.5) 40px);
     font-family: 'ibm-plex-mono',-apple-system,helvetica neue, helvetica, roboto, arial, sans-serif;
     color: ${colors.black};
   `
