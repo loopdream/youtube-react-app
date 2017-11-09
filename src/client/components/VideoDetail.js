@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { media } from '../styles/style-utils'
+import { media, container } from '../styles/style-utils'
 import { colors, fontSizes, mediaQuerySizes as sizes } from '../styles/variables'
 
 
@@ -24,11 +24,36 @@ const VideoDetail = ({ video, backToListText }) => {
   }
  
   
-  const DetailWapper = styled.div`
+  const DetailWapper = styled.div``
+  
+  const ArticleWrapper = styled.div`
+    padding: 5rem 1.5rem 1.5rem;
+    margin: 0 auto;
     ${media.medium`
-       display: flex;
+      padding: 2.5rem;
     `}
-  `
+    ${container()}`
+
+  const Article = styled.article`
+    background-color: ${colors.white};
+    padding: 1rem;
+    margin: 0 auto;
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.18);
+    ${media.small`
+      padding: 1.5rem;
+    `}
+    ${media.medium`
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    `}`
+
+  const Header = styled.header`
+    ${media.medium`
+      flex: 1 0 50%;
+  `}`
+
 
   const VideoOuterWrapper = styled.div`
     ${media.medium`
@@ -41,6 +66,7 @@ const VideoDetail = ({ video, backToListText }) => {
     padding-bottom: 75%;
     height: 0px;
   `
+  
   const YoutubePlayer = styled.iframe`
     border: 2px solid ${colors.black};
     width: 100%;
@@ -49,7 +75,6 @@ const VideoDetail = ({ video, backToListText }) => {
     left: 0px;
     height: 100%;
   `
-  
 
   const Title = styled.h1`
     margin-top: 0;
@@ -63,29 +88,6 @@ const VideoDetail = ({ video, backToListText }) => {
     margin: .5rem 0 1.5rem; 
   `
 
-
-  const ArticleWrapper = styled.div`
-    padding: 5rem 1.5rem 1.5rem;
-    margin: 0 auto;
-    ${media.medium`
-      padding: 2.5rem;
-    `}
-    ${media.large`
-      width: ${sizes.large}px
-    `}`
-
-  const Article = styled.article`
-    background-color: ${colors.white};
-    padding: 1rem;
-    margin: 0 auto;
-    box-shadow: 0 0 30px 0 rgba(0,0,0,0.18);
-    ${media.small`
-      padding: 1.5rem;
-    `}
-    ${media.medium`
-      padding: 2.5rem;
-    `}`
-
   const Description = styled.p`
     margin: 1rem 0 0;
     overflow-wrap: break-word;
@@ -98,8 +100,6 @@ const VideoDetail = ({ video, backToListText }) => {
     `}
   `
 
-  const Header = styled.header``
- 
 
   return (
     <ArticleWrapper>
@@ -108,7 +108,6 @@ const VideoDetail = ({ video, backToListText }) => {
           <Title>{title}</Title>
           <Published>{published}</Published>
         </Header>
-        <DetailWapper>
           <VideoOuterWrapper>
             <VideoInnerWrapper>
               <YoutubePlayer
@@ -119,7 +118,6 @@ const VideoDetail = ({ video, backToListText }) => {
             </VideoInnerWrapper>
           </VideoOuterWrapper>
           <Description dangerouslySetInnerHTML={{ __html: description }}></Description>
-        </DetailWapper>
       </Article>
     </ArticleWrapper>
   )

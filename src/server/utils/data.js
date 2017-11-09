@@ -9,7 +9,7 @@ const formatData = data => {
     let { videoId, videoPublishedAt } = i.contentDetails
     let d = new Date(videoPublishedAt)
     let published = formatDateToStr(d)
-    let truncatedDescription = Truncate(description, 120);
+    let truncatedDescription = Truncate(nl2br(description, ' ' ), 120);
     description = nl2br(findLinksAndAddHrefs(description), '<br/>')
     return { videoId, published, title, description, truncatedDescription, thumbnails }
   })

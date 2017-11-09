@@ -11,12 +11,14 @@ export const colors =  {
   youTubeRed: '#e30000',
 }
 
+ 
 // Media queries
 export const mediaQuerySizes = {
   small: 481,
   medium: 768,
   large: 992,
 }
+
 
 // Font size based on type scale
 export const fontSizes = {
@@ -27,5 +29,4 @@ export const fontSizes = {
   f5: '1rem',
   f6: '.875rem',
   f7: '.75rem',
-}
- 
+} 

@@ -9,6 +9,7 @@ const config = {
   ],
   pageCopy: {
     indexHeading: 'YouTube Playlist.',
+    pageDescription: 'Universal React app displaying a list of videos using the Youtube API.',
     backToListText: 'Back to list of videos',
   },
 }
