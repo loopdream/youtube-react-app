@@ -11,6 +11,7 @@ const Header = ({ indexHeading, backToListText }) => {
   const Header = styled.header`
     background: ${colors.white};
     border-bottom: 20px solid ${colors.darkGrey};
+    position: relative;
   `;
 
   const Container = styled.div`
@@ -20,11 +21,9 @@ const Header = ({ indexHeading, backToListText }) => {
       padding: 2rem 3rem;
     `}
     ${media.medium`
-      padding: 3rem 5rem;
-    `}
-    ${media.small`
       display: flex;
       justify-content: space-between;
+      padding: 3rem 5rem;
     `}
     ${media.large`
       width: ${sizes.large}px
@@ -38,12 +37,15 @@ const Header = ({ indexHeading, backToListText }) => {
     line-height: 2.2rem;
   `
 
- 
+
   const StyledLink = styled(Link) `
     font-weight: 700; 
     align-self: flex-end;
     ${textLink()}
     padding-left: .4rem;
+    position: absolute;
+    right: 3rem;
+    bottom: -4.5rem;
     &:before {
       border-style: solid;
       border-width: 0.25em 0.25em 0 0;
@@ -59,6 +61,11 @@ const Header = ({ indexHeading, backToListText }) => {
       left: -.4rem;
       transform: rotate(-135deg);
     }
+    ${media.medium`
+      position: relative;
+      right: auto;
+      bottom: auto;
+    `}
   `
 
   // Helpers
