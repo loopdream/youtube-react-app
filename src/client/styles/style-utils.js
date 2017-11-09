@@ -4,7 +4,7 @@ import { fonts, colors, mediaQuerySizes as sizes, fontSizes } from '../styles/va
 
 
 // MQs
-export const media = Object.keys(sizes).reduce((acc, label) => {
+const media = Object.keys(sizes).reduce((acc, label) => {
   acc[label] = (...args) => css`
 		@media (min-width: ${sizes[label] / 16}em) {
 			${css(...args)}
@@ -13,10 +13,11 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
   return acc
 }, {})
 
+export { media }
 
 
 // truncate
-export const truncate = width => {
+const truncate = width => {
   return `
     width: ${width};
     white-space: nowrap;
@@ -24,10 +25,11 @@ export const truncate = width => {
     text-overflow: ellipsis;
   `
 }
+export { truncate }
 
 
 // Link text
-export const textLink = () => {
+const textLink = () => {
   return `
     color: ${colors.green};
     text-decoration: none; 
@@ -38,9 +40,10 @@ export const textLink = () => {
     }
   `
 }
+export { textLink }
 
-
-export const linkWithChevron = () => {
+// Chevron link
+const linkWithChevron = () => {
   return `
     padding-left: .4rem;
     position: absolute;
@@ -63,13 +66,15 @@ export const linkWithChevron = () => {
     }`
 }
 
-export const container = () => {
+export { linkWithChevron }
+
+
+// Max width container
+const container = () => {
   return `
     margin: 0 auto;
     width: 100%;
-    ${media.large`
-      width: ${sizes.large}px
-    `}
+    max-width: ${sizes.large}px;
   `
 }
-
+export { container }
