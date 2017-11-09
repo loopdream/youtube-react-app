@@ -76,8 +76,23 @@ Install all the NPM dependencies
 yarn install 
 ```
 
-
 ## Development
+
+
+Run the dev envoiroment build (localhost:8000) 
+
+```shell
+yarn run dev
+```
+
+
+## Production 
+
+Run the optimised prodution build:  
+
+```shell
+yarn start
+```
 
 
 ## Deployment
