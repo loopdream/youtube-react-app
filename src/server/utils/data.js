@@ -15,6 +15,9 @@ const formatData = data => {
   })
   return { nextPageToken, pageInfo, videos }
 }
+export { formatData }
+
+
 
 // ISO date to string as per wireframe
 const formatDateToStr = date => {
@@ -30,20 +33,17 @@ const formatDateToStr = date => {
   let str = `Published on ${months[monthIndex]} ${day}, ${year}`
   return str
 }
+export { formatDateToStr }
 
+
+// Find instances of links and add html anchors
 const findLinksAndAddHrefs = str => {
   return str.replace(/(http:\/\/[^\s]+)/gi, '<a href="$1">$1</a>')
 }
+export { findLinksAndAddHrefs }
 
-
+// remove excessive line breaks from strings
 const nl2br = (str, rStr) => {
   return str.replace(/(?:\r\n|\r|\n)/g, rStr)
 }
-
-
-export {
-  formatData,
-  formatDateToStr,
-  nl2br,
-  findLinksAndAddHrefs,
-}
+export { nl2br }

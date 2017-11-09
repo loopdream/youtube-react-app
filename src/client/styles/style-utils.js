@@ -25,7 +25,8 @@ export const truncate = width => {
   `
 }
 
-// truncate
+
+// Link text
 export const textLink = () => {
   return `
     color: ${colors.green};

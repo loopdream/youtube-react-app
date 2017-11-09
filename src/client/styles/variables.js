@@ -1,3 +1,5 @@
+
+// Colors
 export const colors =  {
   green: '#00b158',
   black: '#050505',
@@ -9,6 +11,8 @@ export const colors =  {
   youTubeRed: '#e30000',
 }
 
+ 
+// Media queries
 export const mediaQuerySizes = {
   small: 481,
   medium: 768,
@@ -16,6 +20,7 @@ export const mediaQuerySizes = {
 }
 
 
+// Font size based on type scale
 export const fontSizes = {
   f1: '3rem',
   f2: '2.25rem',
@@ -24,4 +29,4 @@ export const fontSizes = {
   f5: '1rem',
   f6: '.875rem',
   f7: '.75rem',
-}
+} 
