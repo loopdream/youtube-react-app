@@ -37,11 +37,10 @@ Every request will get piped through this method where we:
 app.use('*', async (req, res) => {
 
   const match = routes.reduce((acc, route) => matchPath(req.baseUrl, route, { exact: true }) || acc, null)
-  console.log(match)
+  
   if (!match.isExact) {
     const errPageStr = renderToString(<NoMatch />)
-    return res.status(404).send(render(errPageStr))
-    
+    return res.status(404).send(render(errPageStr))  
   }
 
   try {
