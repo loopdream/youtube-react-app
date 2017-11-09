@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { colors, mediaQuerySizes as sizes, fontSizes } from '../styles/variables'
-import { media, textLink } from '../styles/style-utils';
+import { media, textLink, linkWithChevron, container } from '../styles/style-utils';
 
 const Header = ({ indexHeading, backToListText }) => {
   
@@ -25,9 +25,7 @@ const Header = ({ indexHeading, backToListText }) => {
       justify-content: space-between;
       padding: 3rem 5rem;
     `}
-    ${media.large`
-      width: ${sizes.large}px
-    `}
+    ${container()}
   `
 
   const Heading = styled.h1`
@@ -42,25 +40,7 @@ const Header = ({ indexHeading, backToListText }) => {
     font-weight: 700; 
     align-self: flex-end;
     ${textLink()}
-    padding-left: .4rem;
-    position: absolute;
-    right: 3rem;
-    bottom: -4.5rem;
-    &:before {
-      border-style: solid;
-      border-width: 0.25em 0.25em 0 0;
-      content: '';
-      display: inline-block;
-      height: 0.45em;
-      left: 0.15em;
-      position: relative;
-      top: .4rem;
-      transform: rotate(-45deg);
-      vertical-align: top;
-      width: 0.45em;
-      left: -.4rem;
-      transform: rotate(-135deg);
-    }
+    ${linkWithChevron()}
     ${media.medium`
       position: relative;
       right: auto;

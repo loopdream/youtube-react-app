@@ -38,9 +38,34 @@ export const textLink = () => {
   `
 }
 
+
+export const linkWithChevron = () => {
+  return `
+    padding-left: .4rem;
+    position: absolute;
+    right: 3rem;
+    bottom: -4.5rem;
+    &:before {
+      border-style: solid;
+      border-width: 0.25em 0.25em 0 0;
+      content: '';
+      display: inline-block;
+      height: 0.45em;
+      left: 0.15em;
+      position: relative;
+      top: .4rem;
+      transform: rotate(-45deg);
+      vertical-align: top;
+      width: 0.45em;
+      left: -.4rem;
+      transform: rotate(-135deg);
+    }`
+}
+
 export const container = () => {
   return `
     margin: 0 auto;
+    width: 100%;
     ${media.large`
       width: ${sizes.large}px
     `}

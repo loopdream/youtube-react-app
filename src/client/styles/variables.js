@@ -1,4 +1,4 @@
-const colors =  {
+export const colors =  {
   green: '#00b158',
   black: '#050505',
   lightGrey: '#f7f7f7',
@@ -9,14 +9,14 @@ const colors =  {
   youTubeRed: '#e30000',
 }
 
-const mediaQuerySizes = {
+export const mediaQuerySizes = {
   small: 481,
   medium: 768,
   large: 992,
 }
 
 
-const fontSizes = {
+export const fontSizes = {
   f1: '3rem',
   f2: '2.25rem',
   f3: '1.5rem',
@@ -24,10 +24,4 @@ const fontSizes = {
   f5: '1rem',
   f6: '.875rem',
   f7: '.75rem',
-}
-
-export {
-  colors,
-  mediaQuerySizes,
-  fontSizes,
 }

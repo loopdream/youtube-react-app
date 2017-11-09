@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { media } from '../styles/style-utils'
+import { media, container } from '../styles/style-utils'
 import { colors, fontSizes, mediaQuerySizes as sizes } from '../styles/variables'
 
 
@@ -32,9 +32,7 @@ const VideoDetail = ({ video, backToListText }) => {
     ${media.medium`
       padding: 2.5rem;
     `}
-    ${media.large`
-      width: ${sizes.large}px
-    `}`
+    ${container()}`
 
   const Article = styled.article`
     background-color: ${colors.white};
@@ -68,8 +66,7 @@ const VideoDetail = ({ video, backToListText }) => {
     padding-bottom: 75%;
     height: 0px;
   `
-
-
+  
   const YoutubePlayer = styled.iframe`
     border: 2px solid ${colors.black};
     width: 100%;
@@ -103,8 +100,6 @@ const VideoDetail = ({ video, backToListText }) => {
     `}
   `
 
-
- 
 
   return (
     <ArticleWrapper>

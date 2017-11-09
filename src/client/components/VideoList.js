@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { colors, mediaQueries } from '../styles/variables'
 import VideoListItem from './VideoListItem'
-import { media } from '../styles/style-utils'
+import { media, container } from '../styles/style-utils'
 import { mediaQuerySizes as sizes } from '../styles/variables'
 
 class VideoList extends Component {
@@ -30,9 +30,7 @@ class VideoList extends Component {
       ${media.medium`
         padding: 2.5rem 2.5rem 0 2.5rem;
       `}
-      ${media.large`
-        width: ${sizes.large}px
-      `}`
+      ${container()}`
 
     const List = styled.ul`
       padding: 0;
