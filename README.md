@@ -42,7 +42,7 @@ Install Nodemon for automatically restarting the node server in development.
 npm i -g nodemon
 ```
 
-Install yarn and lol at the irony of the following.
+Install yarn and lol at the irony of it all.
 
 ```shell
 npm i -g yarn 

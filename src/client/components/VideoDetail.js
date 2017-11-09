@@ -24,46 +24,8 @@ const VideoDetail = ({ video, backToListText }) => {
   }
  
   
-  const DetailWapper = styled.div`
-    ${media.medium`
-       display: flex;
-    `}
-  `
-
-  const VideoOuterWrapper = styled.div`
-    ${media.medium`
-      width: 100%;
-      width: 60%;
-    `}
-  `
-  const VideoInnerWrapper = styled.div`
-    position: relative;
-    padding-bottom: 75%;
-    height: 0px;
-  `
-  const YoutubePlayer = styled.iframe`
-    border: 2px solid ${colors.black};
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-  `
+  const DetailWapper = styled.div``
   
-
-  const Title = styled.h1`
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: ${fontSizes.f3};
-  `
-    
-  const Published = styled.p`
-    color: ${colors.midGrey};
-    font-size: ${fontSizes.f6};
-    margin: .5rem 0 1.5rem; 
-  `
-
-
   const ArticleWrapper = styled.div`
     padding: 5rem 1.5rem 1.5rem;
     margin: 0 auto;
@@ -84,7 +46,50 @@ const VideoDetail = ({ video, backToListText }) => {
     `}
     ${media.medium`
       padding: 2.5rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
     `}`
+
+  const Header = styled.header`
+    ${media.medium`
+      flex: 1 0 50%;
+  `}`
+
+
+  const VideoOuterWrapper = styled.div`
+    ${media.medium`
+      width: 100%;
+      width: 60%;
+    `}
+  `
+  const VideoInnerWrapper = styled.div`
+    position: relative;
+    padding-bottom: 75%;
+    height: 0px;
+  `
+
+
+  const YoutubePlayer = styled.iframe`
+    border: 2px solid ${colors.black};
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+  `
+
+  const Title = styled.h1`
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: ${fontSizes.f3};
+  `
+    
+  const Published = styled.p`
+    color: ${colors.midGrey};
+    font-size: ${fontSizes.f6};
+    margin: .5rem 0 1.5rem; 
+  `
 
   const Description = styled.p`
     margin: 1rem 0 0;
@@ -98,7 +103,7 @@ const VideoDetail = ({ video, backToListText }) => {
     `}
   `
 
-  const Header = styled.header``
+
  
 
   return (
@@ -108,7 +113,6 @@ const VideoDetail = ({ video, backToListText }) => {
           <Title>{title}</Title>
           <Published>{published}</Published>
         </Header>
-        <DetailWapper>
           <VideoOuterWrapper>
             <VideoInnerWrapper>
               <YoutubePlayer
@@ -119,7 +123,6 @@ const VideoDetail = ({ video, backToListText }) => {
             </VideoInnerWrapper>
           </VideoOuterWrapper>
           <Description dangerouslySetInnerHTML={{ __html: description }}></Description>
-        </DetailWapper>
       </Article>
     </ArticleWrapper>
   )

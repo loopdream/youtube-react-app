@@ -1,6 +1,8 @@
 import { css } from 'styled-components'
 import { fonts, colors, mediaQuerySizes as sizes, fontSizes } from '../styles/variables'
 
+
+
 // MQs
 export const media = Object.keys(sizes).reduce((acc, label) => {
   acc[label] = (...args) => css`
@@ -11,6 +13,8 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
   return acc
 }, {})
 
+
+
 // truncate
 export const truncate = width => {
   return `
@@ -20,7 +24,6 @@ export const truncate = width => {
     text-overflow: ellipsis;
   `
 }
-
 
 // truncate
 export const textLink = () => {
