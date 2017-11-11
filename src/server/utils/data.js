@@ -38,7 +38,7 @@ export { formatDateToStr }
 
 // Find instances of links and add html anchors
 const findLinksAndAddHrefs = str => {
-  return str.replace(/(http:\/\/[^\s]+)/gi, '<a href="$1">$1</a>')
+  return str.replace(/((http|https):\/\/[^\s]+)/gi, '<a href="$1">$1</a>')
 }
 export { findLinksAndAddHrefs }
 
