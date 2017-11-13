@@ -35,12 +35,9 @@ class VideoList extends Component {
       padding: 0;
       margin: 0;
       list-style-type: none;
-      ${mq.greaterThan('sm')`
+      ${mq.between('sm', 'md')`
         display: flex;
         flex-flow: row wrap;
-      `}
-      ${mq.greaterThan('md')`
-        display: block;
       `}
       `
 

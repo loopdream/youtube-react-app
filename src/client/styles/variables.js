@@ -31,4 +31,5 @@ export const fontSizes = {
   f5: '1rem',
   f6: '.875rem',
   f7: '.75rem',
+  f8: '.65rem',
 } 
