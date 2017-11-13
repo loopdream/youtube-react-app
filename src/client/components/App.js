@@ -6,8 +6,8 @@ import Header from './Header'
 import NoMatch from './NoMatch'
 import config from '../../config'
 import styled from 'styled-components'
-import { colors, mediaQuerySizes as sizes } from '../styles/variables'
-import { media, container } from '../styles/style-utils'
+import { colors } from '../styles/variables'
+import { container } from '../styles/style-utils'
 
 
 const App = ({ videoData}) => {

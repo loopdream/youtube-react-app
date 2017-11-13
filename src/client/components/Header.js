@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { colors, mediaQuerySizes as sizes, fontSizes } from '../styles/variables'
-import { media, textLink, linkWithChevron, container } from '../styles/style-utils';
+import { colors, fontSizes } from '../styles/variables'
+import { mq, textLink, linkWithChevron, container } from '../styles/style-utils';
 
 
 const Header = ({ indexHeading, backToListText }) => {
@@ -17,10 +17,10 @@ const Header = ({ indexHeading, backToListText }) => {
   const Container = styled.div`
     margin: 0 auto;
     padding: 1.5rem 2.5rem;
-    ${media.small`
+    ${mq.greaterThan('sm')`
       padding: 2rem 3rem;
     `}
-    ${media.medium`
+    ${mq.greaterThan('md')`
       display: flex;
       justify-content: space-between;
       padding: 3rem 5rem;
@@ -41,7 +41,7 @@ const Header = ({ indexHeading, backToListText }) => {
     align-self: flex-end;
     ${textLink()}
     ${linkWithChevron()}
-    ${media.medium`
+    ${mq.greaterThan('md')`
       position: relative;
       right: auto;
       bottom: auto;

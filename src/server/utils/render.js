@@ -2,7 +2,7 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import Serialize from 'serialize-javascript'
 import config from '../../config'
-
+import { normalize } from 'polished'
 const { faviconUrl, fontUrl, pageCopy } = config
 
 
