@@ -90,7 +90,7 @@ const VideoDetail = ({ video, backToListText }) => {
   const Published = styled.p`
     color: ${colors.midGrey};
     font-size: ${fontSizes.f6};
-    margin: .5rem 0 1.5rem; 
+    margin: 1rem 0 1.5rem; 
   `
 
   const Description = styled.p`

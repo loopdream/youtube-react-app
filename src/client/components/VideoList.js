@@ -35,10 +35,6 @@ class VideoList extends Component {
       padding: 0;
       margin: 0;
       list-style-type: none;
-      ${mq.between('sm', 'md')`
-        display: flex;
-        flex-flow: row wrap;
-      `}
       `
 
     // JSX 

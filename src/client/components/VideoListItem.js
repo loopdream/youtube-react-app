@@ -35,13 +35,6 @@ const VideoListItem = ({
       padding: 2.5rem;
       margin-bottom: 2.5rem;
     `}
-    ${mq.between('sm', 'md') `
-      flex-basis: 47%;
-      &:nth-child(odd) {
-        margin-right: 1.5em;
-        padding-bottom: 42%;
-    `}
-
   ` 
   
   const Title = styled.h2`
@@ -51,14 +44,12 @@ const VideoListItem = ({
     font-size: ${fontSizes.f3};
     line-height: 1.5rem;
     ${mq.greaterThan('sm')`
-      width: 100%;
-      line-height: 1.7rem;
-    `}
-    ${mq.greaterThan('md')`
       width: 85%;
+      line-height: 1.2;
     `}
-    ${mq.between('sm', 'md') `
-      font-size: ${fontSizes.f4};
+    ${mq.greaterThan('md') `
+      width: 100%;
+      margin-bottom: 1rem;
     `}
   `
 
@@ -72,9 +63,6 @@ const VideoListItem = ({
     letter-spacing: 0.025rem;
     color: ${colors.midGrey};
     margin-top: 0;
-    ${mq.greaterThan('sm')`
-      font-size: ${fontSizes.f7};
-    `}
   `
 
   const Description = styled.p`
@@ -95,12 +83,6 @@ const VideoListItem = ({
     &:hover {
       cursor: pointer;
     }
-    ${mq.between('sm', 'md') `
-      position: absolute;
-      bottom: 1.5em;
-      left: 1.5em;
-      right: 1.5em;
-    `}
     ${mq.greaterThan('md')`
       width: 60%;
     `}

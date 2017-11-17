@@ -17,6 +17,7 @@ export const colors =  {
 // Media queries
 export const breakpoints = pxToEm({
   sm: '481px',
+  smd: '640px',
   md: '768px',
   lg: '992px',
 }, 16)
