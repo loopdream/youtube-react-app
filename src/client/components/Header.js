@@ -5,7 +5,7 @@ import { colors, fontSizes } from '../styles/variables'
 import { mq, textLink, linkWithChevron, container } from '../styles/style-utils';
 
 
-const Header = ({ indexHeading, backToListText }) => {
+const Header = ({ title, backToListText }) => {
   
   // Styles
   const Header = styled.header`
@@ -59,7 +59,7 @@ const Header = ({ indexHeading, backToListText }) => {
   return (
     <Header>
       <Container>
-        <Heading dangerouslySetInnerHTML={{ __html: formatHeadingStr(indexHeading) }}></Heading>
+        <Heading dangerouslySetInnerHTML={{ __html: formatHeadingStr(title) }}></Heading>
         <Route path="/video/:videoId" render={
           ({ match }) => (
             <StyledLink to="/">{backToListText}</StyledLink>

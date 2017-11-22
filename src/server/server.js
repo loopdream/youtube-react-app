@@ -13,15 +13,14 @@ import { ServerStyleSheet } from 'styled-components'
 // custom
 import render from './utils/render'
 import { formatData } from './utils/data'
-import config from '../config'
+import config, { api, routes, server } from '../config'
 
-// React components
+// React components 
 import App from '../client/components/App'
 import NoMatch from '../client/components/NoMatch'
 import Error from '../client/components/Error'
 
 // setup
-const routes = config.routes
 const app = Express()
 app.disable('x-powered-by')
 app.use(Compression());
@@ -49,7 +48,7 @@ app.use('*', async (req, res) => {
   try { // async try / catch
     
     // fetch data from api
-    const response = await Axios.get(config.apiUrl) 
+    const response = await Axios.get(api.url) 
 
     // format the and sanitize the response data for our front end
     const videoData = formatData(response.data)
@@ -83,6 +82,7 @@ app.use('*', async (req, res) => {
 
 })
 
+
 // Set port and start server
-const PORT = process.env.PORT || config.port
+const PORT = process.env.PORT || server.port
 app.listen(PORT, (err) => err ? console.log(err) : console.log(`server started port: ${PORT}`))
