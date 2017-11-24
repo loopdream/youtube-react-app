@@ -1,3 +1,5 @@
+import { pxToEm } from 'styled-media-query';
+
 
 // Colors
 export const colors =  {
@@ -13,11 +15,12 @@ export const colors =  {
 
  
 // Media queries
-export const mediaQuerySizes = {
-  small: 481,
-  medium: 768,
-  large: 992,
-}
+export const breakpoints = pxToEm({
+  sm: '481px',
+  smd: '640px',
+  md: '768px',
+  lg: '992px',
+}, 16)
 
 
 // Font size based on type scale
@@ -29,4 +32,5 @@ export const fontSizes = {
   f5: '1rem',
   f6: '.875rem',
   f7: '.75rem',
+  f8: '.65rem',
 } 

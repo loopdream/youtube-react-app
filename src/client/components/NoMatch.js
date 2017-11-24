@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { media, container } from '../styles/style-utils'
+import { mq, container } from '../styles/style-utils'
 import Header from './Header'
  
 const Container = styled.div`
-  ${media.small`
+  ${mq.greaterThan('sm')`
     padding: 2rem 3rem;
   `}
-  ${media.medium`
+  ${mq.greaterThan('md')`
     padding: 3rem 5rem;
   `}
   ${container()}`

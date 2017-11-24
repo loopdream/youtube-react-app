@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import NoMatch from './NoMatch'
-import { media, container } from '../styles/style-utils'
-import { colors, fontSizes, mediaQuerySizes as sizes } from '../styles/variables'
+import { mq, container } from '../styles/style-utils'
+import { colors, fontSizes } from '../styles/variables'
 
 
 const VideoDetail = ({ video, backToListText }) => {
@@ -34,7 +34,7 @@ const VideoDetail = ({ video, backToListText }) => {
   const ArticleWrapper = styled.div`
     padding: 5rem 1.5rem 1.5rem;
     margin: 0 auto;
-    ${media.medium`
+    ${mq.greaterThan('md')`
       padding: 2.5rem;
     `}
     ${container()}`
@@ -44,10 +44,10 @@ const VideoDetail = ({ video, backToListText }) => {
     padding: 1rem;
     margin: 0 auto;
     box-shadow: 0 0 30px 0 rgba(0,0,0,0.18);
-    ${media.small`
+    ${mq.greaterThan('sm')`
       padding: 1.5rem;
     `}
-    ${media.medium`
+    ${mq.greaterThan('md')`
       padding: 2.5rem;
       display: flex;
       flex-direction: row;
@@ -55,13 +55,13 @@ const VideoDetail = ({ video, backToListText }) => {
     `}`
 
   const Header = styled.header`
-    ${media.medium`
+    ${mq.greaterThan('md')`
       flex: 1 0 50%;
   `}`
 
 
   const VideoOuterWrapper = styled.div`
-    ${media.medium`
+    ${mq.greaterThan('md')`
       width: 100%;
       width: 60%;
     `}
@@ -90,7 +90,7 @@ const VideoDetail = ({ video, backToListText }) => {
   const Published = styled.p`
     color: ${colors.midGrey};
     font-size: ${fontSizes.f6};
-    margin: .5rem 0 1.5rem; 
+    margin: 1rem 0 1.5rem; 
   `
 
   const Description = styled.p`
@@ -98,14 +98,12 @@ const VideoDetail = ({ video, backToListText }) => {
     overflow-wrap: break-word;
     word-wrap: break-word;
     line-height: 1.5rem;
-    ${media.medium`
+    ${mq.greaterThan('md')`
       margin: 0;
       padding-left: 2rem;
       width: 40%;
     `}
   `
-
-
 
   return (
     <ArticleWrapper>

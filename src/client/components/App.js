@@ -4,10 +4,10 @@ import VideoList from './VideoList'
 import VideoDetail from './VideoDetail'
 import Header from './Header'
 import NoMatch from './NoMatch'
-import config from '../../config'
+import { siteData } from '../../config'
 import styled from 'styled-components'
-import { colors, mediaQuerySizes as sizes } from '../styles/variables'
-import { media, container } from '../styles/style-utils'
+import { colors } from '../styles/variables'
+import { container } from '../styles/style-utils'
 
 
 const App = ({ videoData}) => {
@@ -19,7 +19,7 @@ const App = ({ videoData}) => {
     videos, 
   } = videoData 
 
-  const { pageCopy } = config
+  // console.log('siteData', siteData)
   
   // Styles
   const Main = styled.main`
@@ -35,12 +35,12 @@ const App = ({ videoData}) => {
   
   return (
     <Main>
-      <Header {...pageCopy} />
+      <Header {...siteData} />
       <Container>    
-        <Route exact path="/" render={() => <VideoList videos={videos} {...pageCopy} />} />
+        <Route exact path="/" render={() => <VideoList videos={videos} {...siteData} />} />
         <Route path="/video/:videoId" render={
           ({ match }) => (
-            <VideoDetail {...pageCopy} video={videos.find(v => v.videoId === match.params.videoId)} />
+            <VideoDetail {...siteData} video={videos.find(v => v.videoId === match.params.videoId)} />
           )
         } />
       </Container>

@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { colors, mediaQueries } from '../styles/variables'
 import VideoListItem from './VideoListItem'
-import { media, container } from '../styles/style-utils'
-import { mediaQuerySizes as sizes } from '../styles/variables'
+import { mq, container } from '../styles/style-utils'
 
 class VideoList extends Component {
   
@@ -27,7 +26,7 @@ class VideoList extends Component {
     const ListingSection = styled.section`
       padding: 1.5rem 1.5rem 0 1.5rem;
       margin: 0 auto;
-      ${media.medium`
+      ${mq.greaterThan('md')`
         padding: 2.5rem 2.5rem 0 2.5rem;
       `}
       ${container()}`
@@ -35,7 +34,8 @@ class VideoList extends Component {
     const List = styled.ul`
       padding: 0;
       margin: 0;
-      list-style-type: none;`
+      list-style-type: none;
+      `
 
     // JSX 
 

@@ -1,20 +1,9 @@
 import { css } from 'styled-components'
-import { fonts, colors, mediaQuerySizes as sizes, fontSizes } from '../styles/variables'
+import { fonts, colors, breakpoints, fontSizes } from '../styles/variables'
+import { generateMedia } from 'styled-media-query';
 
-
-
-// MQs
-const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-		@media (min-width: ${sizes[label] / 16}em) {
-			${css(...args)}
-		}
-	`
-  return acc
-}, {})
-
-export { media }
-
+const mq = generateMedia(breakpoints)
+export { mq }
 
 // truncate
 const truncate = width => {
@@ -74,7 +63,8 @@ const container = () => {
   return `
     margin: 0 auto;
     width: 100%;
-    max-width: ${sizes.large}px;
+    max-width: ${breakpoints.lg};
   `
 }
+ 
 export { container }

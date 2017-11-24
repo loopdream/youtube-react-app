@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { colors, fontSizes } from '../styles/variables'
-import { media, textLink, truncate } from '../styles/style-utils'
+import { mq, textLink, truncate } from '../styles/style-utils'
 
 const VideoListItem = ({ 
   title,
@@ -22,13 +22,14 @@ const VideoListItem = ({
     box-shadow: 0 0 30px 0 rgba(0,0,0,0.18);
     margin-bottom: 1.5rem;
     transition: box-shadow 500ms;
+    position: relative;
     &:hover {
       box-shadow: 0 0 30px 0 rgba(0,0,0,0.38);
     }
-    ${media.small`
+    ${mq.greaterThan('sm')`
       padding: 1.5rem;
     `}
-    ${media.medium`
+    ${mq.greaterThan('md') `
       display: flex;
       flex-direction: row-reverse;
       padding: 2.5rem;
@@ -42,16 +43,18 @@ const VideoListItem = ({
     margin-bottom: .5rem;
     font-size: ${fontSizes.f3};
     line-height: 1.5rem;
-    ${media.medium`
-      width: 100%;
-      line-height: 1.7rem;
-    `}
-    ${media.medium`
+    ${mq.greaterThan('sm')`
       width: 85%;
+      line-height: 1.2;
+    `}
+    ${mq.greaterThan('md') `
+      width: 100%;
+      margin-bottom: 1rem;
     `}
   `
 
   const TitleLink = styled(Link) `
+    display: block;
     ${textLink()}
   `
 
@@ -60,13 +63,9 @@ const VideoListItem = ({
     letter-spacing: 0.025rem;
     color: ${colors.midGrey};
     margin-top: 0;
-    ${media.medium`
-      font-size: ${fontSizes.f7};
-    `}
   `
 
   const Description = styled.p`
-
     color: ${colors.darkGrey};
     font-size: ${fontSizes.f6};
     line-height: 1.2rem;
@@ -74,7 +73,7 @@ const VideoListItem = ({
     overflow-wrap: break-word;
     word-wrap: break-word;
     display: none;
-    ${media.medium`
+    ${mq.greaterThan('md')`
       display: block;
     `}
   `
@@ -84,7 +83,7 @@ const VideoListItem = ({
     &:hover {
       cursor: pointer;
     }
-    ${media.medium`
+    ${mq.greaterThan('md')`
       width: 60%;
     `}
   `
@@ -95,7 +94,7 @@ const VideoListItem = ({
     border: 2px solid ${colors.black};
   `
   const VideoDetails = styled.div`
-  ${media.medium`
+  ${mq.greaterThan('md')`
     width: 40%;
     padding-left: 2rem;
   `}`
