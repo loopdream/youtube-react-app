@@ -17,22 +17,6 @@ const formatData = data => {
 export { formatData }
 
 
-// formatVideos = pipe(
-//   filter(
-//     pipe(
-//       prop('thumbnails'),
-//       equals('undefined')
-//     )
-//   ),
-//   map()
-// )(data.items)
-
-// export {
-//   formatData: data => Object.assign(format(data), pageInfo: data.pageInfo, nextPageToken: data.pageInfo)
-// }
- 
-
-
 // ISO date to string as per wireframe
 const formatDateToStr = date => {
   const months= [
