@@ -24,7 +24,7 @@ module.exports = {
             presets: [
               'react',
               ['env', {
-                'targets': 'current'
+                'targets': 'current',
               }]
             ],
           },
@@ -34,7 +34,11 @@ module.exports = {
   },
   plugins: [
     new UglifyJSPlugin({
-      sourceMap: true
-    })
+      sourceMap: true,
+    }),
+    new CopyWebpackPlugin([{
+      from: '../../static',
+      to: './static',
+    }]),
   ]
 };

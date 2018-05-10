@@ -5,18 +5,16 @@ const formatData = data => {
   const { nextPageToken, pageInfo, items } = data
   const videosWithThumb = items.filter(v => v.thumbnails !== 'undefined' ) // remove entries with no thumbs
   const videos = videosWithThumb.map(i => {
-    let { thumbnails, title, description, resourceId } = i.snippet
-    let { videoId, videoPublishedAt } = i.contentDetails
-    let d = new Date(videoPublishedAt)
-    let published = formatDateToStr(d)
-    let truncatedDescription = Truncate(nl2br(description, ' ' ), 120);
-    description = nl2br(findLinksAndAddHrefs(description), '<br/>')
-    return { videoId, published, title, description, truncatedDescription, thumbnails }
+    const { thumbnails, title, description, resourceId } = i.snippet
+    const { videoId, videoPublishedAt } = i.contentDetails
+    const published = formatDateToStr(new Date(videoPublishedAt))
+    const truncatedDescription = Truncate(nl2br(description, ' ' ), 120);
+    const newDesc = nl2br(findLinksAndAddHrefs(description), '<br/>')
+    return { videoId, published, title, description: newDesc, truncatedDescription, thumbnails }
   })
   return { nextPageToken, pageInfo, videos }
 }
 export { formatData }
-
 
 
 // ISO date to string as per wireframe
@@ -27,10 +25,10 @@ const formatDateToStr = date => {
     "Aug", "Sept", "Oct",
     "Nov", "Dec"
   ]
-  let day = date.getDate()
-  let monthIndex = date.getMonth()
-  let year = date.getFullYear()
-  let str = `Published on ${months[monthIndex]} ${day}, ${year}`
+  const day = date.getDate()
+  const monthIndex = date.getMonth()
+  const year = date.getFullYear()
+  const str = `Published on ${months[monthIndex]} ${day}, ${year}`
   return str
 }
 export { formatDateToStr }

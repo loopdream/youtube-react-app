@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -34,9 +36,14 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ]
   },
-  plugins: []
+  plugins: [
+    new CopyWebpackPlugin([{
+      from: '../../static',
+      to: './static',
+    }]),
+  ]
 };
